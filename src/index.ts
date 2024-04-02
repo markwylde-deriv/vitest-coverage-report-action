@@ -52,6 +52,7 @@ const run = async () => {
 		});
 	} catch (error) {
 		if (error instanceof RequestError && (error.status === 404 || error.status === 403)) {
+			console.log(error);
 			core.warning(
 				`Couldn't write a comment to the pull-request. Please make sure your job has the permission 'pull-request: write'.
 				 Original Error was: [${error.name}] - ${error.message}
